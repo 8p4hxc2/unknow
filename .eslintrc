@@ -1,0 +1,12 @@
+{
+  "extends": "eslint-config-airbnb-es5",
+  "env": {
+    "amd": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {},
+  "rules": {
+    "no-extra-semi": 1
+  }
+}
