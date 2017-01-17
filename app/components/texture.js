@@ -1,6 +1,6 @@
 'use strict';
 
-const Component = require('./component');
+const Component = require('core/component');
 
 class Texture extends Component {
   constructor (src) {

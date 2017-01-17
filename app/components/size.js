@@ -1,6 +1,6 @@
 'use strict';
 
-const Component = require('./component');
+const Component = require('core/component');
 
 class Size extends Component {
   constructor (width, height) {
