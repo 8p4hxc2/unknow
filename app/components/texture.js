@@ -3,10 +3,11 @@
 const Component = require('core/component');
 
 class Texture extends Component {
-  constructor (src) {
+  constructor (options) {
     super('textures');
 
-    this.scr = src || '';
+    this.color=options.color;
+    //this.scr = src || '';
   }
 }
 

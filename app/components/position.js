@@ -3,12 +3,12 @@
 const Component = require('core/component');
 
 class Position extends Component {
-	constructor(x, y) {
-		super('position');
+  constructor(options) {
+    super('position');
 
-		this.x = x || 0;
-		this.y = y || 0;
-	}
+    this.x = options.x || 0;
+    this.y = options.y || 0;
+  }
 }
 
 module.exports = Position;
