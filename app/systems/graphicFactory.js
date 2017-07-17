@@ -1,7 +1,7 @@
 const System = require('core/system');
 const systemHandler = require('core/systemHandler');
 
-class GraphicFactory extends System {
+class Factory extends System {
   constructor() {
     super({"position": true, "color": true, "instantiated": false});
   }
@@ -12,4 +12,4 @@ class GraphicFactory extends System {
   }
 }
 
-module.exports = new GraphicFactory();
+module.exports = new Factory();

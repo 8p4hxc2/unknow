@@ -1,9 +1,9 @@
 const System = require('core/system');
 const Renderer = require('core/renderer');
 
-class RenderGraphic extends System {
+class GraphicRenderer extends System {
   constructor() {
-    super({"graphic": true, "instantiated": true, "displayed": false});
+    super({"color": true, "instantiated": true, "displayed": false});
 
     //Renderer.initialize(this);
   }
@@ -15,4 +15,4 @@ class RenderGraphic extends System {
   }
 }
 
-module.exports = new RenderGraphic();
+module.exports = new GraphicRenderer();

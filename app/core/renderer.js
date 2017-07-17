@@ -34,7 +34,7 @@ class Renderer {
   createGraphic(entity) {
     var graphics = new PIXI.Graphics();
     graphics.lineStyle(2, 0x0000FF, 1);
-    graphics.beginFill(entity.get('graphic').color, 1);
+    graphics.beginFill(entity.get('color').color, 1);
     graphics.drawRect(entity.get('position').x, entity.get('position').y, entity.get('size').width, entity.get('size').height);
     graphics.endFill();
 

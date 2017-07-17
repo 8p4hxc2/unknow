@@ -7,11 +7,11 @@ const body = require('entities/body');
 const food = require('entities/food');
 
 //systemHandler.add("physic");
-systemHandler.add("render");
-systemHandler.add("renderGraphic");
-systemHandler.add("factory");
-systemHandler.add("collision");
-systemHandler.add("movement");
+//systemHandler.add("spriteRenderer");
+systemHandler.add("graphicRenderer");
+systemHandler.add("graphicFactory");
+//systemHandler.add("collision");
+//systemHandler.add("movement");
 
 renderer.initialize();
 renderer.run();

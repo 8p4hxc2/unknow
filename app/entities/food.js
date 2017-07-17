@@ -7,7 +7,7 @@ class Food extends Entity {
 
     this.add("position", position);
     this.add("size", size);
-    this.add("graphic", {color: 0xFFFF0B});
+    this.add("color", {color: 0xFFFF0B});
   }
 }
 

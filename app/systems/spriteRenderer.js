@@ -1,7 +1,7 @@
 const System = require('core/system');
 const Renderer = require('core/renderer');
 
-class Render extends System {
+class SpriteRenderer extends System {
   constructor() {
     super({"texture": true, "instantiated": true, "displayed": false});
   }
@@ -13,4 +13,4 @@ class Render extends System {
   }
 }
 
-module.exports = new Render();
+module.exports = new SpriteRenderer();
