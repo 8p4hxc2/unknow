@@ -5,7 +5,8 @@
     "main": "main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "export NODE_PATH=./; node ./node_modules/.bin/electron ./"
+        "start": "export NODE_PATH=./; node ./node_modules/.bin/electron ./",
+        "build": "webpack --watch"
     },
     "repository": {
         "type": "git",
@@ -19,6 +20,12 @@
     "homepage": "https://github.com/8p4hxc2/unknow#readme",
     "devDependencies": {
         "electron": "latest",
-        "app-module-path": "latest"
+        "app-module-path": "latest",
+        "webpack": "latest",
+        "webpack-dev-server": "^2.4.2"
+    },
+    "dependencies": {
+        "box2dweb": "^2.1.0-b",
+        "pixi.js": "^4.5.3"
     }
 }

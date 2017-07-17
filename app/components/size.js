@@ -1,13 +1,11 @@
-'use strict';
-
 const Component = require('core/component');
 
 class Size extends Component {
-  constructor (width, height) {
+  constructor (options) {
     super('size');
 
-    this.width = width || 0;
-    this.height = height || 0;
+    this.width = options.width || 0;
+    this.height = options.height || 0;
   }
 }
 

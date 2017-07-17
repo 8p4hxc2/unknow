@@ -2,43 +2,42 @@ require('app-module-path').addPath(__dirname);
 
 const systemHandler = require('core/systemHandler');
 const keyboardHandler = require('core/keyboardHandler');
-/*const systemRenderer = require('systems/renderer');
+const renderer = require('core/renderer');
+const body = require('entities/body');
+const food = require('entities/food');
 
-
-systemRenderer.register(newEntity);
-console.log(systemRenderer);
-
-
-const level = alias.require("@factories/level");
-const systemHandler = alias.require("@handlers/system");
-const resourceHandler = alias.require("@handlers/resource");
-const keyboardHandler = alias.require("@handlers/keyboard");
-
-function initialize() {
-  systemHandler.add("physic");
-  systemHandler.add("animation");
-  systemHandler.add("renderer");
-  systemHandler.add("player");
-
-  resourceHandler.run().then(function() {
-    level.create();
-    animate();
-  });
-}
-
-function animate() {
-  systemHandler.run();
-  requestAnimationFrame(animate);
-}
-*/
-
+//systemHandler.add("physic");
 systemHandler.add("render");
+systemHandler.add("renderGraphic");
 systemHandler.add("factory");
+systemHandler.add("collision");
 systemHandler.add("movement");
-systemHandler.add("spriteSpawn");
+
+renderer.initialize();
+renderer.run();
+
+systemHandler.register(new food({
+  x: Math.ceil(Math.random() * 1280),
+  y: Math.ceil(Math.random() * 720)
+}, {
+  width: 50,
+  height: 50
+}));
+
+/*setInterval(function() {
+  systemHandler.register(new body({
+    x: Math.floor(Math.random()*80),
+    y: -Math.floor(Math.random()*80),
+  }, {
+    horizontal: 1,
+    vertical: 0
+  }, {
+    width: 4,
+    height: 4
+  }));
+}, 50);*/
 
 animate();
-
 function animate() {
   systemHandler.run();
   requestAnimationFrame(animate);

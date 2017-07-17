@@ -7,11 +7,9 @@ class Render extends System {
   }
 
   process(entity) {
-    console.log('PROCESS SYSTEM');
     let sprite = Renderer.createSprite(entity);
-    entity.add('displayed', {value:sprite});
+    entity.add('displayed', {value: sprite});
     systemHandler.register(entity);
-    document.body.appendChild(sprite);
   }
 }
 

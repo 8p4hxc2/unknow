@@ -1,5 +1,3 @@
-'use strict';
-
 const Component = require('core/component');
 
 class Position extends Component {
