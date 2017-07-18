@@ -43,6 +43,11 @@ class Renderer {
     return graphics;
   }
 
+  deleteGraphic(entity) {
+    //this.app.stage.removeChild(entity.get('displayed').sprite);
+    entity.get('displayed').sprite.destroy();
+  }
+
   run() {
     this.app.ticker.add((delta) => {
       document.getElementById('fps').innerHTML = Math.ceil(this.app.ticker.FPS);

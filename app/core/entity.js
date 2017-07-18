@@ -1,4 +1,5 @@
 const tools = require('core/tools');
+const systemHandler = require('core/systemHandler');
 
 class Entity {
   constructor() {
@@ -30,6 +31,15 @@ class Entity {
 
   contain(component) {
     return typeof(this.components[component]) !== "undefined";
+  }
+
+  remove(component) {
+    delete this.components[component];
+    systemHandler.registerFromObject(this);
+  }
+
+  delete() {
+    systemHandler.remove(this);
   }
 }
 

@@ -3,26 +3,19 @@ require('app-module-path').addPath(__dirname);
 const systemHandler = require('core/systemHandler');
 const keyboardHandler = require('core/keyboardHandler');
 const renderer = require('core/renderer');
-const body = require('entities/body');
-const food = require('entities/food');
+//const body = require('entities/body');
+//const food = require('entities/food');
 
 //systemHandler.add("physic");
-//systemHandler.add("spriteRenderer");
+systemHandler.add("foodFactory");
 systemHandler.add("graphicRenderer");
-systemHandler.add("graphicFactory");
+//systemHandler.add("graphicCollector");
+//systemHandler.add("graphicFactory");
 //systemHandler.add("collision");
 //systemHandler.add("movement");
 
 renderer.initialize();
 renderer.run();
-
-systemHandler.register(new food({
-  x: Math.ceil(Math.random() * 1280),
-  y: Math.ceil(Math.random() * 720)
-}, {
-  width: 50,
-  height: 50
-}));
 
 /*setInterval(function() {
   systemHandler.register(new body({

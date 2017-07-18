@@ -2,6 +2,7 @@ class System {
   constructor(blueprint) {
     this.blueprint = blueprint;
     this.entities = [];
+    this.count = 0;
   }
 
   register(entity) {
@@ -16,16 +17,32 @@ class System {
     }
 
     if (match === total) {
-      this.entities[entity.id] = entity;
-    } else {
+      if (!this.entities[entity.id]) {
+        this.count++;
+        this.entities[entity.id] = entity;
+      }
+    } else if (this.entities[entity.id]) {
       delete this.entities[entity.id];
+      this.count--;
     }
   }
 
   run() {
+    if (this.count === 0) {
+      this.empty();
+      return;
+    }
+
     for (let entity in this.entities) {
       this.process(this.entities[entity]);
     }
+  }
+
+  empty() {}
+
+  remove(entity) {
+    this.count--;
+    delete this.entities[entity.id];
   }
 }
 
