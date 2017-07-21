@@ -8,14 +8,33 @@ const renderer = require('core/renderer');
 
 //systemHandler.add("physic");
 systemHandler.add("foodFactory");
-systemHandler.add("graphicRenderer");
+systemHandler.add("foodEater");
+systemHandler.add("foodCleaner");
+
+systemHandler.add("stomacFactory");
+systemHandler.add("stomacMovement");
 //systemHandler.add("graphicCollector");
 //systemHandler.add("graphicFactory");
 //systemHandler.add("collision");
-//systemHandler.add("movement");
+systemHandler.add("playerMovement");
+
+systemHandler.add("movement");
+systemHandler.add("graphicRenderer");
+
 
 renderer.initialize();
 renderer.run();
+
+systemHandler.register('player', {
+  position: {
+    x: 0,
+    y: 0
+  },
+  size: {
+    width: 64,
+    height: 64
+  }
+});
 
 /*setInterval(function() {
   systemHandler.register(new body({

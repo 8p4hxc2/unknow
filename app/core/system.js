@@ -28,17 +28,14 @@ class System {
   }
 
   run() {
-    if (this.count === 0) {
-      this.empty();
-      return;
-    }
+    this.selfProcess();
 
     for (let entity in this.entities) {
       this.process(this.entities[entity]);
     }
   }
 
-  empty() {}
+  selfProcess() {}
 
   remove(entity) {
     this.count--;

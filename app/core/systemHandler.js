@@ -23,8 +23,6 @@ class SystemHandler {
     for (let system in this.systems) {
       this.systems[system].remove(entity);
     }
-
-    //delete entity;
   }
 
   run() {

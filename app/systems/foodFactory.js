@@ -6,24 +6,23 @@ class FoodFactory extends System {
     super({"eatable": true});
   }
 
-  process(entity) {
-    if (Math.ceil(Math.random() * 200) === 5) {
-      entity.delete();
+  selfProcess() {
+    //    if (Math.ceil(Math.random() * 5) === 1) {
+    if (this.count === 0) {
+      systemHandler.register('food', {
+        position: {
+          x: Math.ceil(Math.random() * 500),
+          y: Math.ceil(Math.random() * 500)
+        },
+        size: {
+          width: 64,
+          height: 64
+        }
+      });
     }
   }
 
-  empty() {
-    systemHandler.register('food', {
-      position: {
-        x: Math.ceil(Math.random() * 1280),
-        y: Math.ceil(Math.random() * 720)
-      },
-      size: {
-        width: Math.ceil(Math.random() * 40) + 10,
-        height: Math.ceil(Math.random() * 40) + 10
-      }
-    });
-  }
+  process(entity) {}
 }
 
 module.exports = new FoodFactory();

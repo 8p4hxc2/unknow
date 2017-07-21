@@ -1,11 +1,11 @@
 const Component = require('core/component');
 
 class Direction extends Component {
-  constructor(options) {
+  constructor(options = {}) {
     super('direction');
 
     this.horizontal = options.horizontal || 0;
-    this.vertical == options.vertical || 0;
+    this.vertical = options.vertical || 0;
   }
 }
 

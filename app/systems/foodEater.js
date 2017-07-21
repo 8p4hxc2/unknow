@@ -1,11 +1,8 @@
 const System = require('core/system');
-const keyboard = require('components/keyboard');
-const body = require('entities/food');
-const systemHandler = require('core/systemHandler');
 
-class FoodSpawn extends System {
+class FoodEater extends System {
   constructor() {
-    super({"collide": true, "position": true, "size": true, "displayed": true});
+    super({"life": true, "position": true, "size": true, "displayed": true});
   }
 
   process(entity) {
@@ -16,7 +13,7 @@ class FoodSpawn extends System {
     let height = entity.get('size').height;
 
     for (let id in this.entities) {
-      if (id === entity.id) {
+      if (id === entity.id || !this.entities[id].get('eatable')) {
         continue;
       }
       let positionCollision = this.entities[id].get('position');
@@ -25,14 +22,17 @@ class FoodSpawn extends System {
       if (x < positionCollision.x + sizeCollision.width && x + width > positionCollision.x && y < positionCollision.y + sizeCollision.height && height + y > positionCollision.y) {
         collision++;
       }
+
+      if (collision !== 0) {
+        this.entities[id].add('eated');
+        entity.add('eating');
+        systemHandler.registerFromObject(this.entities[id]);
+        systemHandler.registerFromObject(entity);
+        break;
+      }
     }
 
-    let direction = entity.get('direction');
-    if (collision !== 0 && direction) {
-      direction.horizontal = 0;
-      direction.vertical = 0;
-    }
   }
 }
 
-module.exports = new FoodSpawn();
+module.exports = new FoodEater();

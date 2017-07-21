@@ -8,7 +8,7 @@ class GraphicRenderer extends System {
   }
 
   process(entity) {
-    let graphic = Renderer.createGraphic(entity);
+    let graphic = Renderer.createSprite(entity);
     entity.add('displayed', {value: graphic});
     systemHandler.registerFromObject(entity);
   }

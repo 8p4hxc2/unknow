@@ -1,4 +1,3 @@
-const Position = require('components/position');
 const Entity = require('core/entity');
 
 class Food extends Entity {
@@ -8,6 +7,7 @@ class Food extends Entity {
     this.add("eatable");
     this.add("position", options.position);
     this.add("size", options.size);
+    this.add("life");
     this.add("color", {color: 0xFFFF0B});
   }
 }

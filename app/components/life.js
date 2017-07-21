@@ -8,4 +8,4 @@ class Life extends Component {
   }
 }
 
-module.exports = Position;
+module.exports = Life;
